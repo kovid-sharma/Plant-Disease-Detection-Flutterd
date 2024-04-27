@@ -45,9 +45,37 @@ class _HomeState extends State<Home> {
     late Disease _disease;
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 50,
+              child: Image.asset('assets/images/10237112.png',
+                fit: BoxFit.fitHeight,
+
+              ),
+            ),
+            Text('Plant Disease Detector',
+              style: TextStyle(
+                color: Colors.white
+              ),
+            ),
+            Container(
+              height: 50,
+              child: Image.asset('assets/images/10237112.png',
+                fit: BoxFit.fitHeight,
+
+              ),
+            ),
+          ],
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: SpeedDial(
-        icon: Icons.camera_alt,
+        icon: Icons.camera_alt_outlined,
         spacing: 10,
         children: [
           SpeedDialChild(
@@ -122,19 +150,27 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/images/bg.jpg'), fit: BoxFit.cover),
-        ),
-        child: CustomScrollView(
-          slivers: [
-            GreetingSection(size.height * 0.2),
-            TitleSection('Instructions', size.height * 0.066),
-            InstructionsSection(size),
-            TitleSection('Your History', size.height * 0.066),
-            HistorySection(size, context, _diseaseService)
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/10237112.png',), fit: BoxFit.contain,
+            ),
+          ),
+          height: size.height,
+          child: CustomScrollView(
+            slivers: [
+              //GreetingSection(size.height * 0.1),
+              SizedSection(size.height*0.05),
+              TitleSection('Your History', size.height * 0.050),
+              HistorySection(size, context, _diseaseService),
+              SizedSection(size.height*0.23),
+              TitleSection('Instructions', size.height * 0.050),
+              InstructionsSection(size),
+              SizedSection(size.height*0.20),
+        
+            ],
+          ),
         ),
       ),
     );

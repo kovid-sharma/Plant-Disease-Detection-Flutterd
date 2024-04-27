@@ -54,7 +54,7 @@ Widget _returnHistoryContainer(Disease disease, BuildContext context,
     DiseaseService diseaseService, Size size) {
   return Padding(
     padding: EdgeInsets.fromLTRB(
-        (0.053 * size.height * 0.3), 0, (0.053 * size.height * 0.3), 0),
+        (0.053 * size.height), 0, (0.053 * size.height ), 0),
     child: GestureDetector(
       onTap: () {
         // Set disease for Disease Service
@@ -79,7 +79,7 @@ Widget _returnHistoryContainer(Disease disease, BuildContext context,
                   blurRadius: (0.022 * size.height * 0.3),
                 ),
               ],
-              color: kSecondary,
+              color: Colors.green,
               borderRadius: BorderRadius.circular((0.053 * size.height * 0.3))),
           child: Center(
             child: Column(

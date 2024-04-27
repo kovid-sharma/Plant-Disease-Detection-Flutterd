@@ -12,9 +12,9 @@ class InstructionsSection extends SliverFixedExtentList {
                     (0.061 * size.height * 0.26),
                     (0.071 * size.height * 0.26),
                     (0.076 * size.height * 0.26),
-                    (0.061 * size.height * 0.26)),
+                    (0.0 * size.height * 0)),
                 child: Container(
-                  height: size.height * 0.26,
+                  height: size.height * 0.30,
                   decoration: BoxDecoration(
                     color: kSecondary,
                     borderRadius:

@@ -1,3 +1,4 @@
+import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:plant_disease_detector/services/disease_provider.dart';
@@ -36,7 +37,20 @@ class MyApp extends StatelessWidget {
                     return const Suggestions();
                   case Home.routeName:
                   default:
-                    return const Home();
+                    return FlutterSplashScreen.gif(
+                      backgroundColor: Colors.white,
+                      gifPath: 'assets/images/10237112.png',
+                      gifWidth: 269,
+                      gifHeight: 474,
+                      nextScreen: const Home(),
+                      duration: const Duration(milliseconds: 3515),
+                      onInit: () async {
+                        debugPrint("onInit");
+                      },
+                      onEnd: () async {
+                        debugPrint("onEnd 1");
+                      },
+                    );;
                 }
               });
         },
